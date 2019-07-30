@@ -9,6 +9,7 @@ public class Variable {
 		double pi = 3.141592653589d;
 		char tm = 'i';
 		boolean isExist = true;
+		
 		System.out.println("core = " + core);
 		System.out.println("multiplier = " + multiplier);
 		System.out.println("fsb = " + fsb);

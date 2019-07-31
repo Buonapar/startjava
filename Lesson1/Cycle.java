@@ -6,20 +6,22 @@ public class Cycle {
 		}
 
 		System.out.println("\nцикл while:\n");
-		int j = 6;
-		while(j >= -6) {
-			System.out.println(j);
-			j = j - 2;
+		int counter = 6;
+		while(counter >= -6) {
+			System.out.println(counter);
+			counter -= 2;
 		}
 
-		int k = 10;
+		counter = 10;
 		int sum = 0;
 		do{
-			if (k % 2 != 0) {
-				sum = sum + k;
+			
+			if (counter % 2 != 0) {
+				sum += counter;
 			}
-			k++;
-		}while(k <= 20);
+			counter++;
+		}while(counter <= 20);
+
 		System.out.println("\nсумма всех нечетных чисел в цикле do-while: " + sum);
 	}
 }

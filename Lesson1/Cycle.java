@@ -14,14 +14,12 @@ public class Cycle {
 
 		counter = 10;
 		int sum = 0;
-		do{
-			
+		do {
 			if (counter % 2 != 0) {
 				sum += counter;
 			}
 			counter++;
-		}while(counter <= 20);
-
+		} while(counter <= 20);
 		System.out.println("\nсумма всех нечетных чисел в цикле do-while: " + sum);
 	}
 }

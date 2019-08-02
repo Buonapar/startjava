@@ -1,27 +1,71 @@
 public class Wolf {
-	boolean isMale;
-	String nickname;
-	float weight;
-	int age;
-	String color;
+	private boolean isMale;
+	private String nickname;
+	private float weight;
+	private int age;
+	private String color;
 
-	void go() {
+	public boolean isMale() {
+		return isMale;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public float getWeight() {
+		return weight;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setMale(boolean male) {
+		isMale = male;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
+
+	public void setAge(int age) {
+		if (age > 8) {
+			System.out.println("Некорректный возраст");
+		} else {
+			this.age = age;
+		}
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void go() {
 		System.out.println("Волк идет");
 	}
 
-	void sit() {
+	public void sit() {
 		System.out.println("Волк сидит");
 	}
 
-	void run() {
+	public void run() {
 		System.out.println("Волк бежит");
 	}
 
-	void howl() {
+	public void howl() {
 		System.out.println("Волк воет");
 	}
 
-	void hunt() {
+	public void hunt() {
 		System.out.println("Волк охотится");
 	}
 }

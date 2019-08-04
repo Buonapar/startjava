@@ -15,15 +15,26 @@ public class Calculator {
         this.action = action;
     }
 
-    public String operation() {
+    public String calculate() {
         switch (action) {
-            case "+": return argOne + " " + action + " " + argTwo + " = " + (argOne + argTwo);
-            case "-": return argOne + " " + action + " " + argTwo + " = " + (argOne - argTwo);
-            case "*": return argOne + " " + action + " " + argTwo + " = " + (argOne * argTwo);
-            case "/": return argOne + " " + action + " " + argTwo + " = " + (argOne / argTwo);
-            case "^": return argOne + " " + action + " " + argTwo + " = " + (Math.pow(argOne, argTwo));
-            case "%": return argOne + " " + action + " " + argTwo + " = " + (argOne % argTwo);
+            case "+":
+                return argOne + " " + action + " " + argTwo + " = " + (argOne + argTwo);
+            case "-":
+                return argOne + " " + action + " " + argTwo + " = " + (argOne - argTwo);
+            case "*":
+                return argOne + " " + action + " " + argTwo + " = " + (argOne * argTwo);
+            case "/":
+                return argOne + " " + action + " " + argTwo + " = " + (argOne / argTwo);
+            case "^": {
+                int result = 1;
+                for (int i = 1; i <= argTwo; i++) {
+                    result *= argOne;
+                }
+                return argOne + " " + action + " " + argTwo + " = " + result;
+            }
+            case "%":
+                return argOne + " " + action + " " + argTwo + " = " + (argOne % argTwo);
+            default: return null;
         }
-        return null;
     }
 }

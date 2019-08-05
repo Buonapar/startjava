@@ -3,27 +3,36 @@ import java.util.Scanner;
 public class GuessNumber {
     private int hiddenNumber;
     private boolean isWork = true;
+    private Scanner scanner = new Scanner(System.in);
+    private Player one;
+    private Player second;
 
-    public GuessNumber() {
-        hiddenNumber = (int) (Math.random() * 100);
+    public GuessNumber(Player one, Player second) {
+        hiddenNumber = (int) (Math.random() * 101);
+        this.one = one;
+        this.second = second;
     }
 
-    public void play(Player one, Player second) {
-
+    public void play() {
         while(isWork) {
             inputNumber(one);
-            System.out.println(searchNumber(one));
+            System.out.println(compareNumbers(one));
 
             if (!isWork) {
                 break;
             }
 
             inputNumber(second);
-            System.out.println(searchNumber(second));
+            System.out.println(compareNumbers(second));
         }
     }
 
-    private String searchNumber(Player player) {
+    private void inputNumber(Player player) {
+        System.out.println(player.getName() + " введи число: ");
+        player.setNumber(scanner.nextInt());
+    }
+
+    private String compareNumbers(Player player) {
         if (player.getNumber() < hiddenNumber) {
             return player.getName() + " введенное вами число меньше того, что загадал компьютер";
         } else if (player.getNumber() > hiddenNumber){
@@ -33,11 +42,5 @@ public class GuessNumber {
         return player.getName() + " вы выиграли!";
     }
 
-    private Player inputNumber(Player player) {
-        System.out.println(player.getName() + " введи число: ");
-        Scanner scanner = new Scanner(System.in);
-        player.setNumber(scanner.nextInt());
-        return player;
-    }
 
 }

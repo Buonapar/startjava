@@ -25,13 +25,12 @@ public class Calculator {
                 return argOne + " " + action + " " + argTwo + " = " + (argOne * argTwo);
             case "/":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne / argTwo);
-            case "^": {
+            case "^": 
                 int result = 1;
                 for (int i = 1; i <= argTwo; i++) {
                     result *= argOne;
                 }
                 return argOne + " " + action + " " + argTwo + " = " + result;
-            }
             case "%":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne % argTwo);
             default: return null;

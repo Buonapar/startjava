@@ -4,15 +4,10 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        number = (int) Math.random() * 100;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getNumber() {

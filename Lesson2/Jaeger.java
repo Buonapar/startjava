@@ -4,10 +4,6 @@ public class Jaeger {
 	private float weight;
 	private int speed;
 
-	public Jaeger(){
-
-	}
-
 	public Jaeger(String modelName, String status, float weight, int speed) {
 		this.modelName = modelName;
 		this.status = status;

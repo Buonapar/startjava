@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.person;
+
 public class Person {
 	boolean isMale = true;
 	String name = "Ivan";

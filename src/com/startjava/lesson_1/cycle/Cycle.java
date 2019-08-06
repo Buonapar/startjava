@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.cycle;
+
 public class Cycle {
 	public static void main(String[] args) {
 		System.out.println("\nцикл for:\n");

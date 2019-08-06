@@ -1,9 +1,11 @@
+package com.startjava.lesson_1.calculator;
+
 public class Calculator {
 	public static void main(String[] args) {
 		int argOne = 10;
-		int argTwo = 5;
+		int argTwo = 0;
 		int result = 0;
-		char operation = '%';
+		char operation = '^';
 		if (operation == '+') {
 			result = argOne + argTwo;
 		} else if (operation == '-') {

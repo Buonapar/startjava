@@ -1,23 +1,16 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-    private int argOne = 10;
-    private int argTwo = 0;
+    private int argOne;
+    private int argTwo;
     private String action;
 
-    public void setArgOne(int argOne) {
-        this.argOne = argOne;
-    }
+    public String calculate(String line) {
+        String[] arr = line.split(" ");
+        argOne = Integer.parseInt(arr[0]);
+        argTwo = Integer.parseInt(arr[2]);
+        action = arr[1];
 
-    public void setArgTwo(int argTwo) {
-        this.argTwo = argTwo;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public String calculate() {
         switch (action) {
             case "+":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne + argTwo);
@@ -27,12 +20,8 @@ public class Calculator {
                 return argOne + " " + action + " " + argTwo + " = " + (argOne * argTwo);
             case "/":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne / argTwo);
-            case "^": 
-                int result = 1;
-                for (int i = 1; i <= argTwo; i++) {
-                    result *= argOne;
-                }
-                return argOne + " " + action + " " + argTwo + " = " + result;
+            case "^":
+                return argOne + " " + action + " " + argTwo + " = " + (int)Math.pow(argOne, argTwo);
             case "%":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne % argTwo);
             default: return null;

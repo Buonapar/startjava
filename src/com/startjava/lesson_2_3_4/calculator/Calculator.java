@@ -5,11 +5,11 @@ public class Calculator {
     private int argTwo;
     private String action;
 
-    public String calculate(String line) {
-        String[] arr = line.split(" ");
-        argOne = Integer.parseInt(arr[0]);
-        argTwo = Integer.parseInt(arr[2]);
-        action = arr[1];
+    public String calculate(String mathAction) {
+        String[] strings = mathAction.split(" ");
+        argOne = Integer.parseInt(strings[0]);
+        argTwo = Integer.parseInt(strings[2]);
+        action = strings[1];
 
         switch (action) {
             case "+":

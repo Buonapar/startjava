@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-        System.out.println("Введите имя первого игрока: ");
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите имя первого игрока: ");
         Player playerOne = new Player(scanner.next());
         System.out.println("Введите имя второго игрока: ");
         Player playerTwo = new Player(scanner.next());

@@ -8,27 +8,29 @@ public class Player {
     private int[] numbers;
     private int attempt;
 
+    public Player(String name) {
+        this.name = name;
+        numbers = new int[10];
+    }
+
     public int getAttempt() {
         return attempt;
     }
 
     public int[] getNumbers() {
-        return numbers;
+        return Arrays.copyOf(numbers, attempt);
     }
 
-    public Player(String name) {
-        this.name = name;
-        numbers = new int[10];
-
-    }
-
-    public void nullListNumber() {
-        attempt = 0;
+    public void resetTheListOfAttempts() {
         Arrays.fill(numbers, 0, attempt, 0);
     }
 
-    public void countAttempt() {
-        ++attempt;
+    public void resetTheNumberOfAttempts() {
+        attempt = 0;
+    }
+
+    public void addAttempt() {
+        attempt++;
         numbers[attempt - 1] = number;
     }
 
@@ -42,15 +44,5 @@ public class Player {
 
     public void setNumber(int number) {
         this.number = number;
-    }
-
-
-    public String toStringArrayNumbers(int[] numbers) {
-        StringBuilder b = new StringBuilder();
-        for(int number : numbers) {
-            b.append(number);
-            b.append(" ");
-        }
-        return b.toString();
     }
 }

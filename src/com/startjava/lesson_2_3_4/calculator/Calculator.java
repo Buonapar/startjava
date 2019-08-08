@@ -5,12 +5,15 @@ public class Calculator {
     private int argTwo;
     private String action;
 
-    public String calculate(String mathAction) {
-        String[] strings = mathAction.split(" ");
-        argOne = Integer.parseInt(strings[0]);
-        argTwo = Integer.parseInt(strings[2]);
-        action = strings[1];
 
+    public void parseExpression(String mathExpression) {
+        String[] expression = mathExpression.split(" ");
+        argOne = Integer.parseInt(expression[0]);
+        argTwo = Integer.parseInt(expression[2]);
+        action = expression[1];
+    }
+
+    public String calculate() {
         switch (action) {
             case "+":
                 return argOne + " " + action + " " + argTwo + " = " + (argOne + argTwo);

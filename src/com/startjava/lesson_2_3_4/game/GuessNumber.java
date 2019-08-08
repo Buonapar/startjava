@@ -18,10 +18,10 @@ public class GuessNumber {
     }
 
     public void play() {
-        playerOne.resetTheListOfAttempts();
-        playerOne.resetTheNumberOfAttempts();
-        playerSecond.resetTheListOfAttempts();
-        playerSecond.resetTheNumberOfAttempts();
+        playerOne.resetAttempts();
+        playerOne.setAttempt(0);
+        playerSecond.resetAttempts();
+        playerSecond.setAttempt(0);
 
         System.out.println("У вас 10 попыток");
         while(isWin) {

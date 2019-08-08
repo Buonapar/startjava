@@ -17,21 +17,21 @@ public class Player {
         return attempt;
     }
 
+    public void setAttempt(int attempt) {
+        this.attempt = attempt;
+    }
+
     public int[] getNumbers() {
         return Arrays.copyOf(numbers, attempt);
     }
 
-    public void resetTheListOfAttempts() {
+    public void resetAttempts() {
         Arrays.fill(numbers, 0, attempt, 0);
     }
 
-    public void resetTheNumberOfAttempts() {
-        attempt = 0;
-    }
-
     public void addAttempt() {
+        numbers[attempt] = number;
         attempt++;
-        numbers[attempt - 1] = number;
     }
 
     public String getName() {

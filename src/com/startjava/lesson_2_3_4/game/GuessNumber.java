@@ -34,10 +34,10 @@ public class GuessNumber {
             System.out.println(compareNumbers(playerSecond));
             if (playerSecond.getAttempt() > maxAttempt) {
                 isWin = false;
-                typingArray(playerOne);
-                typingArray(playerSecond);
             }
         }
+        typingArray(playerOne);
+        typingArray(playerSecond);
     }
 
     private void inputNumber(Player player) {
@@ -56,22 +56,16 @@ public class GuessNumber {
             return player.getName() + " введенное вами число больше того, что загадал компьютер";
         }
         isWin = false;
-        typingArray(playerOne);
-        typingArray(playerSecond);
         return "Игрок " + player.getName() + " угадал число " + player.getNumber() + " c " + (player.getAttempt()) + " попытки";
     }
 
     private void typingArray(Player player){
-        System.out.println("Игрок " + player.getName() + " вводил числа: " + toStringArrayNumbers(player.getNumbers()));
+        System.out.print("Игрок " + player.getName() + " вводил числа: ");
+        for (int number : player.getNumbers()) {
+            System.out.print(number + " ");
+        }
+        System.out.println("");
     }
 
-    public String toStringArrayNumbers(int[] numbers) {
-        StringBuilder b = new StringBuilder();
-        for(int number : numbers) {
-            b.append(number);
-            b.append(" ");
-        }
-        return b.toString();
-    }
 
 }
